@@ -138,7 +138,6 @@ static void ReadDataSet() //method to read in all values from csv file
 	    	fuel_consumption[j] = next_val; //story value in proper array
 
 
-
 	    	int engine_speed_pos = 11;
 
 	    	engine_speed[j] = ReturnColumnValue(line, 0, engine_speed_pos, pos);
@@ -155,63 +154,7 @@ static void ReadDataSet() //method to read in all values from csv file
 
 	    	vehicle_speed[j] = ReturnColumnValue(line, current_gear_pos, vehicle_speed_pos, pos);
 
-	    	/*string next_val;
-	    	string rest_of_line = line.substr(pos+1);
-	    	size_t nextpos = pos;
-	    	for(int i = 0; i <= engine_speed_pos; i++)
-	    	{
-	    		//cout<<rest_of_line;
-	    	    nextpos = rest_of_line.find(","); //find the next comma
-	    	    cout << nextpos;
-	    	    next_val = rest_of_line.substr(0, nextpos);
-	    	    rest_of_line = rest_of_line.substr(nextpos+1); //track the rest of the line
 
-	    	}
-
-	    	//engine_speed[j] = next_val;
-
-	    	int engine_coolant_temp_pos = 15;
-	    	for(int i = engine_speed_pos; i <= engine_coolant_temp_pos; i++)
-	    		    	{
-	    		    		//cout<<rest_of_line;
-	    		    	    nextpos = rest_of_line.find(","); //find the next comma
-	    		    	    //cout << nextpos;
-	    		    	    next_val = rest_of_line.substr(0, nextpos);
-	    		    	    rest_of_line = rest_of_line.substr(nextpos+1); //track the rest of the line
-
-	    		    	}
-	    	engine_coolant_temperature[j] = next_val;
-
-	    	int current_gear_pos = 30;
-	    	for(int i = engine_coolant_temp_pos; i <= current_gear_pos; i++)
-	    	{
-	    		nextpos = rest_of_line.find(","); //find the next comma
-	    			    	    next_val = rest_of_line.substr(0, nextpos);
-	    			    	    rest_of_line = rest_of_line.substr(nextpos+1); //track the rest of the line
-	    	}
-	    	current_gear[j] = next_val;
-
-
-	    	int vehicle_speed_pos = 39;
-	    	for(int i = current_gear_pos; i <= vehicle_speed_pos; i++)
-	    	{
-	    		nextpos = rest_of_line.find(","); //find the next comma
-	    	    next_val = rest_of_line.substr(0, nextpos);
-	    	    rest_of_line = rest_of_line.substr(nextpos+1); //track the rest of the line
-
-	    	}
-	    	vehicle_speed[j] = next_val;
-
-
-	    	//string rest_of_line = line.substr(pos+1); //track the rest of the line
-	    	//size_t nextpos = rest_of_line.find(","); //find the next comma
-	    	//string next_val = rest_of_line.substr(0, nextpos);
-
-	    	//accelerator_pedal_value[i] = next_val;
-	    	j++;
-	        //cout << str << '\n';
-
-	         */
 	    	j++;
 	    }
 	    myfile.close();
@@ -228,11 +171,15 @@ int main (int argc, char *argv[]) {
 	ReadDataSet(); //reads all needed values into an array with the same name
 
 	cout << "All data has been read and stored into arrays \n";
+
+	//test to see all proper values have been stored
 	cout << fuel_consumption[x] + "\n";
 			cout << engine_speed[x] + "\n";
 			cout << engine_coolant_temperature[x] + "\n";
 			cout << current_gear[x] + "\n";
 			cout << vehicle_speed[x] + "\n";
+
+	//code for timer
 	/*int res;
 
 	//set and activate a timer
